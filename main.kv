@@ -1,0 +1,178 @@
+#:kivy 2.2.1
+
+MDScreenManager:
+    MainScreen:
+    RuhaniScreen:
+
+<MainScreen>:
+    name: 'main'
+   
+    Image:
+        source:'bodybuilding.jpg' # Specify the path to your background image
+        allow_stretch: True  # Allow the image to stretch to fill the available space
+        keep_ratio: False
+
+    MDBoxLayout:
+        orientation: 'vertical'
+
+        
+        MDBoxLayout:
+            size_hint_y: None
+            height: "60dp"
+            padding: "2.5dp"
+            MDBoxLayout:
+                orientation: "horizontal"
+                MDBoxLayout:
+                    adaptive_size: True
+                    spacing: "2.5dp"
+                MDLabel:
+                    text: "The Graceful Gain"
+                    font_style: "H4"
+                    theme_text_color: "Primary"
+                    valign: 'middle'
+                    halign: 'left'
+
+        ScrollView:  
+            MDBoxLayout:
+                orientation: 'vertical'
+                padding: "7.5dp"
+                spacing: "5dp"
+                MDLabel:
+                    text: "In the ever-evolving realm of fitness, there's a new player in town that's changing the game. Technology is making its mark, and it's reshaping the way we approach workouts. In this article, we're introducing a groundbreaking workout regimen that's designed to take your fitness journey to new heights."
+                    theme_text_color: "Secondary"
+                    font_size: "25sp"
+
+        GridLayout:
+            size_hint_y: None
+            height: "240dp"
+            cols: 3
+            padding: "7.5dp"
+            spacing: "5dp"
+
+            # First "SHIHAB" section
+            MDBoxLayout:
+                orientation: 'vertical'
+                spacing: "5dp"
+                MDCard:
+                    md_bg_color: 69/255, 55/255, 86/255, 1
+                    radius: "10dp"
+                    on_release: app.show_tailored_for_you()
+                   
+                    MDLabel:
+                        halign: 'center'
+                        text: "Tailored for you"
+                        font_size: "20sp"
+
+            # Second "SHIHAB" section
+            MDBoxLayout:
+                orientation: 'vertical'
+                spacing: "5dp"
+                MDCard:
+                    md_bg_color: 69/255, 55/255, 86/255, 1
+                    radius: "10dp"
+                    on_release: app.show_evolving_with_you()
+                  
+                    MDLabel:
+                        halign: 'center'
+                        text: "Evolving with you"
+                        font_size: "20sp"
+
+            # Third "SHIHAB" section
+            MDBoxLayout:
+                orientation: 'vertical'
+                spacing: "5dp"
+                MDCard:
+                    md_bg_color: 69/255, 55/255, 86/255, 1
+                    radius: "10dp"
+                    on_release: app.show_smart_exercise_choices()
+                   
+                    MDLabel:
+                        halign: 'center'
+                        text: "Smart exercise choices"
+                        font_size: "20sp"
+
+            # Fourth section
+            MDBoxLayout:
+                orientation: 'vertical'
+                spacing: "5dp"
+                MDCard:
+                    md_bg_color: 69/255, 55/255, 86/255, 1
+                    radius: "10dp"
+                    on_release: app.show_real_time_guidance()
+                  
+                    MDLabel:
+                        halign: 'center'
+                        text: "Real-time guidance"
+                        font_size: "20sp"
+
+            # Fifth section
+            MDBoxLayout:
+                orientation: 'vertical'
+                spacing: "5dp"
+                MDCard:
+                    md_bg_color: 69/255, 55/255, 86/255, 1
+                    radius: "10dp"
+                    on_release: app.show_tracking_your_success()
+                    
+                    MDLabel:
+                        halign: 'center'
+                        text: "Tracking your success"
+                        font_size: "20sp"
+
+            # Sixth section
+            MDBoxLayout:
+                orientation: 'vertical'
+                spacing: "5dp"
+                MDCard:
+                    md_bg_color: 69/255, 55/255, 86/255, 1
+                    radius: "10dp"
+                    on_release: app.show_recovery_and_prevention()
+                    
+                    MDLabel:
+                        halign: 'center'
+                        text: "Prioritizing Recovery"
+                        font_size: "20sp"
+
+<RuhaniScreen>:
+    name: 'ruhani'
+    md_bg_color: 69/255, 55/255, 86/255, 1
+
+    BoxLayout:
+        orientation: 'horizontal'
+        
+        MDCard:
+            md_bg_color: 69/255, 55/255, 86/255, 1
+            size_hint_x: 0.3
+            padding: "25dp"
+            MDBoxLayout:
+                orientation: "vertical"
+                spacing: "10dp"
+                MDTextButton:
+                    text: "Back to Home"
+                    font_size: "12sp"
+                    theme_text_color: "Custom"
+                    text_color: 1, 1, 1, 1
+                    halign: 'left'
+                    on_release: root.back_to_home()
+                    MDIcon:
+                        icon: 'chevron-left'
+                        halign: 'left'
+                        size_hint_x: None
+                        width: dp(20)
+
+        ScrollView:
+            size_hint_x: 0.7
+            MDBoxLayout:
+                orientation: 'vertical'
+                padding: dp(15)
+                spacing: dp(10)
+                size_hint_y: None
+                height: self.minimum_height
+
+                MDLabel:
+                    id: section_label
+                    halign: 'center'
+                    text: ""
+                    font_style: 'H6'
+                    size_hint_y:None
+                    height: self.texture_size[1]
